@@ -1,6 +1,9 @@
 " KEY BINDINGS
 
 
+" Quit with Ctrl-Q
+nnoremap <C-q> :q<CR>
+
 " fzf shortcut
 nnoremap <C-p> :Files<CR>
 
@@ -74,6 +77,7 @@ Plug 'tpope/vim-commentary'
 Plug 'cocopon/iceberg.vim'
 Plug 'Chiel92/vim-autoformat'
 Plug 'Exafunction/codeium.vim.git', { 'branch': 'main' }
+Plug 'ryanoasis/vim-devicons'
 " Initialize plugin system
 call plug#end()
 
@@ -82,6 +86,10 @@ call plug#end()
 " COLORS AND STYLE
 colorscheme iceberg
 set t_Co=256
+if has("termguicolors")
+    set termguicolors
+endif
+
 
 
 

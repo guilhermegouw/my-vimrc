@@ -45,4 +45,12 @@ Inside vim run:
 - Paste it in vim ':' panel below.
 - Press <Enter>
 
+## Font & Icons
 
+- Install fonts and icons
+- Extract the zip file to ~/.local/share/fonts
+- Run the following command:
+```
+fc-cache -f -v
+```
+- Select the font in the terminal settings
