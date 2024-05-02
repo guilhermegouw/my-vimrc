@@ -23,8 +23,19 @@ nnoremap <C-n> :NERDTreeToggle<CR>
 nmap gd <Plug>(coc-definition)
 
 " Use space as a leader key
-nnoremap <Space> <Nop>
-nnoremap <leader>n :nohlsearch<CR>
+let mapleader = " "
+
+" Split vertically
+nnoremap <Leader>nv :vsplit<CR>
+
+" Split horizontally
+nnoremap <Leader>nh :split<CR>
+
+" Navigate between splits
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 
 
@@ -71,6 +82,12 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'mattn/emmet-vim'
+Plug 'pangloss/vim-javascript'
+Plug 'othree/html5.vim'
+Plug 'elzr/vim-json'
+Plug 'dense-analysis/ale'
+
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-commentary'
@@ -98,4 +115,12 @@ endif
 let g:autoformat_autoindent = 0
 let g:autoformat_retab = 0
 let g:formatters_python = ['black']
+let g:ale_fixers = {
+  \ 'javascript': ['eslint', 'prettier'],
+  \ 'html': ['prettier'],
+  \}
+let g:ale_linters = {
+  \ 'javascript': ['eslint'],
+  \ 'html': ['htmlhint'],
+  \}
 
