@@ -1,0 +1,43 @@
+1. Add one level of indentation for each line.
+Example:
+
+    Line one
+        Line two
+            Line three
+                Line four
+
+Do it with the dot command:
+
+Line one
+Line two
+Line three
+Line four
+
+2. Suppose that we have a Javascript snippet like the one bellow.
+Add the missing semicolon to each line.
+
+var foo = 'bar'
+var bar = 'foo'
+var foobar = foo + bar
+
+
+3. Suppose that we have a line of code that looks like this.
+
+    var foo = 'method('+argument1+', '+argument2+')';
+
+Pad each + sign with spaces to make it look like this:
+
+    var foo = 'method(' + argument1 + ', ' + argument2 + ')';
+
+Go for it!
+
+--> var foo = 'method('+argument1+', '+argument2+')';
+
+
+4. In the next excerpt, the word "content appears on every line:
+Substitute the word "content" with the word "copy" when it fits.
+
+...We're waiting for content before the site can go live...
+...If you are content with this, let's go ahead with it...
+...We'll launch as soon as we have the content...
+

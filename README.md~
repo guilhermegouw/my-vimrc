@@ -54,29 +54,3 @@ Inside vim run:
 fc-cache -f -v
 ```
 - Select the font in the terminal settings
-
-## RipGrep
-
-Run the following command:
-Linux:
-```
-sudo apt install ripgrep
-```
-
-MacOS:
-```
-brew install ripgrep
-```
-
-## Bat
-
-Run the following command:
-Linux:
-```
-sudo apt install bat
-```
-
-MacOS:
-```
-brew install bat
-```
