@@ -19,6 +19,10 @@ nnoremap <C-s> :w<CR>
 nnoremap <C-n> :NERDTreeToggle<CR>
 " Go-To-Definition
 nmap gd <Plug>(coc-definition)
+" Toggle comment for the current line
+nnoremap <C-/> :Commentary<CR>
+" Toggle comment for the selected lines
+vnoremap <C-/> :Commentary<CR>
 
 " New Buffer
 nnoremap <leader>b :enew<CR>
@@ -104,6 +108,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-commentary'
 Plug 'cocopon/iceberg.vim'
 Plug 'Chiel92/vim-autoformat'
+Plug 'jiangmiao/auto-pairs'
 Plug 'Exafunction/codeium.vim.git', { 'branch': 'main' }
 Plug 'ryanoasis/vim-devicons'
 " Initialize plugin system
@@ -129,6 +134,7 @@ endif
 
 
 " FORMATING
+nnoremap <C-f> :CocCommand editor.action.formatDocument<CR>
 
 let g:autoformat_autoindent = 0
 let g:autoformat_retab = 0
