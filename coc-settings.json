@@ -1,21 +1,36 @@
 {
     "languageserver": {
-        "python": {
-            "command": "pyright-langserver",
-            "args": ["--stdio"],
+        "jedi": {
+            "command": "jedi-language-server",
+            "args": [],
             "filetypes": ["python"],
-            "rootPatterns": ["pyrightconfig.json", ".git/"],
+            "initializationOptions": {},
             "settings": {
-                "python": {
-                    "venvPath": "${workspaceFolder}/.venv",
-                    "pythonPath": "${workspaceFolder}/.venv/bin/python"
-                 },
-                 {
-                    "python.formatting.provider": "black",
-                    "python.formatting.blackPath": "${workspaceFolder}/.venv/bin/black"
-                 }
-             }
-         }
-    }
+                "jedi": {
+                    "completion": {
+                        "disabled": false,
+                        "include_params": true
+                    },
+                    "diagnostics": {
+                        "enabled": true
+                    },
+                    "workspace": {
+                        "extraPaths": ["${workspaceFolder}"],
+                        "symbol": {
+                            "maxSymbols": 2000
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "python.linting.pylintEnabled": true,
+    "python.linting.flake8Enabled": false,
+    "python.formatting.provider": "black",
+    "python.formatting.blackPath": "${workspaceFolder}/.venv/bin/black",
+    "python.formatting.blackArgs": [],
+    "python.sortImports.onSave": true,
+    "python.sortImports.path": "${workspaceFolder}/.venv/bin/isort",
+    "coc.preferences.formatOnSaveFiletypes": ["python"]
 }
 

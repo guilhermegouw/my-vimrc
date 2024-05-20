@@ -1,12 +1,8 @@
 " Key Bindings
 
-
-
 " GENERAL
 " Use space as a leader key
 let mapleader = " "
-
-
 
 " NORMAL MODE
 " Quit with Ctrl-Q
@@ -46,19 +42,13 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-
-
 " INSERT MODE
 " Change Esc for jj
 inoremap jj <Esc>
 
-
-
 " VISUAL MODE
 " Copy to clipboard
 vnoremap <leader>y "*y
-
-
 
 " General Configs
 " Enable syntax highlighting
@@ -88,8 +78,6 @@ set smartcase
 " Enable hidden buffers
 set hidden
 
-
-
 " PLUGINS MANAGEMENT
 " Specify a directory for plugins
 call plug#begin('~/.vim/plugged')
@@ -106,34 +94,29 @@ Plug 'dense-analysis/ale'
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-commentary'
-Plug 'cocopon/iceberg.vim'
 Plug 'Chiel92/vim-autoformat'
 Plug 'jiangmiao/auto-pairs'
 Plug 'Exafunction/codeium.vim.git', { 'branch': 'main' }
+Plug 'kirbycool/one-colors.vim'
 Plug 'ryanoasis/vim-devicons'
 " Initialize plugin system
 call plug#end()
 
 " Enhanced fzf
 command! -nargs=+ FzfRg call fzf#vim#grep('rg --column --line-number --no-heading --color=always --smart-case '.<q-args>, 1, fzf#vim#with_preview(), 0)
-nnoremap <leader>fr :FzfRg 
-
+nnoremap <leader>fr :FzfRg
 
 " COC
 nnoremap <leader>cc :CocConfig<CR>
 
-
-
 " COLORS AND STYLE
-colorscheme iceberg
+colorscheme onedark
 set t_Co=256
 if has("termguicolors")
     set termguicolors
 endif
 
-
-
-" FORMATING
+" FORMATTING
 nnoremap <C-f> :CocCommand editor.action.formatDocument<CR>
 
 let g:autoformat_autoindent = 0
@@ -150,5 +133,9 @@ let g:ale_linters = {
 " Disable ALE for Python, let coc handle it
 let g:ale_linters_ignore = {'python': ['*']}
 let g:ale_fixers_ignore = {'python': ['*']}
-
 let g:ale_fix_on_save = 1
+
+" Autocmd to sort imports and format on save
+autocmd BufWritePre *.py :CocCommand python.sortImports
+autocmd BufWritePre *.py :CocCommand python.formatting.formatDocument
+
