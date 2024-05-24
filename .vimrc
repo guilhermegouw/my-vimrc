@@ -61,6 +61,10 @@ nnoremap <leader><space> :nohlsearch<CR>
 set relativenumber
 " Set line numbering
 set number
+" Enable the status line
+set laststatus=2
+" Customize the status line to include the column number
+set statusline=%F\ %y\ %m\ %r\ %=Ln\ %l,\ Col\ %c
 " Enable mouse support
 set mouse=a
 " Highlight current line
@@ -118,7 +122,12 @@ endif
 
 " FORMATTING
 nnoremap <C-f> :CocCommand editor.action.formatDocument<CR>
+" Use jq to format JSON files
+autocmd FileType json nnoremap <leader>jf :%!jq .<CR>
+" Format Json on save
+autocmd BufWritePre *.json execute ':%!jq .' | update
 
+" FORMATTING CONFIGS
 let g:autoformat_autoindent = 0
 let g:autoformat_retab = 0
 let g:formatters_python = ['black']

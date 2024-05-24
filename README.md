@@ -80,3 +80,21 @@ MacOS:
 ```
 brew install bat
 ```
+
+## jq Json Formatter
+
+On Ubuntu:
+```
+sudo apt-get install jq
+```
+
+On MacOS:
+```
+brew install jq
+```
+
+On Fedora:
+```
+sudo dnf install jq
+```
+
