@@ -57,12 +57,18 @@ fc-cache -f -v
 
 ## RipGrep
 
-Run the following command:
-Linux:
+Run the following command:<br>
+Ubuntu:
 ```
 sudo apt install ripgrep
 ```
 
+Fedora:
+
+```
+sudo dnf install ripgrep
+```
+<br>
 MacOS:
 ```
 brew install ripgrep
@@ -70,12 +76,17 @@ brew install ripgrep
 
 ## Bat
 
-Run the following command:
-Linux:
+Run the following command:<br>
+Ubuntu:
 ```
 sudo apt install bat
 ```
-
+<br>
+Fedora:
+```
+sudo dnf install bat
+```
+<br>
 MacOS:
 ```
 brew install bat
@@ -87,7 +98,12 @@ On Ubuntu:
 ```
 sudo apt-get install jq
 ```
-
+<br>
+On Fedora:
+```
+sudo dnf install jq
+```
+<br>
 On MacOS:
 ```
 brew install jq
