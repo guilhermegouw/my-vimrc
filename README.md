@@ -103,3 +103,14 @@ On MacOS:
 ```
 brew install jq
 ```
+
+## LAZY GIT
+On Fedora:
+```
+sudo dnf copr enable atim/lazygit -y
+sudo dnf install lazygit -y
+```
+On MacOS:
+```
+brew install lazygit
+```
